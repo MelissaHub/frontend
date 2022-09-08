@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/home'
-import Profile from './pages/profile'
-import Project from './pages/project'
-import Edit from './pages/edit'
-import Create from './pages/create'
-import Nav from './componets/nav'
-import Footer from './componets/footer'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Project from './pages/Project'
+import Edit from './pages/Edit'
+import Create from './pages/Create'
+import Nav from './componets/Nav'
+import Footer from './componets/Footer'
 
 const App = () => {
   return (
@@ -16,11 +16,11 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+        
           <Route path="/profile" element={<Profile />} />
           <Route path="/create" element={<Create />} />
           <Route path="/:id" element={<Project />} />
-          <Route path="/edit" element={<Edit />} />
+          <Route path="/:id/edit" element={<Edit />} />
         </Routes>     
       </Router>
       <Footer />

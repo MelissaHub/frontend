@@ -4,17 +4,17 @@ const Nav = () => {
 
 
     return (
-        <div class="container text-center">
+        <div className="container text-center">
 
 
-            <div class="row">
+            <div className="row">
 
-                <div class="col">
+                <div className="col">
                     <a href="/">Home Icon </a>
                 </div>
 
 
-                <div class="col">
+                <div className="col">
                     <a href="/profile">Profile </a></div>
             </div>
 

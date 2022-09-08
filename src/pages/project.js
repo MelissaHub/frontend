@@ -29,18 +29,17 @@ const Project = () => {
                 <h3>{bwu.title}This Is Supposed to Have Title</h3>
                 <p>{bwu.description}This Is Supposed to Have Example</p>
                 <ul>
-                    <a>{bwu.img1}Image one is here</a>
-                    <button onClick={() => { deleteTheBwu(`/${bwu.img1}/`) }}>Delete</button>
-                    <a>{bwu.img2}Image two is here</a>
-                    <button onClick={() => { deleteTheBwu(`/${bwu.img2}/`) }}>Delete</button>
-                    <a>{bwu.img3}Image three is here</a>
-                    <button onClick={() => { deleteTheBwu(`/${bwu.img3}/`) }}>Delete</button>
+                    <a><img src={bwu.img1}/>Image one is here</a>
+             
+                    <a><img src={bwu.img2}/>Image two is here</a>
+
+                    <a><img src={bwu.img3}/>Image three is here</a>
 
                 </ul>
                  
                 <button onClick={deleteTheBwu}>Delete Project</button>
             </div>
-            <button onClick={() => {nav(`/edit`)}}>This is supposed to redirect to edit</button>
+            <button onClick={() => {nav(`/${id}/edit`)}}>This is supposed to redirect to edit</button>
         </div>
     )
 }
