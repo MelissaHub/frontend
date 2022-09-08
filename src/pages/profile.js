@@ -3,17 +3,19 @@ import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 
 
-
+//use effect works better?
 
 export default function Profile() {
     const nav = useNavigate()
     const { id } = useParams()
     const [bwu, setBwu] = useState([])
+    
     useEffect(()=>{
         getbwus()
         .then(res => setBwu(res.data))
     },[])
-    const deleteTheBwu = () =>{
+
+    const deleteTheBwu = (id) =>{
         deletebwu(id) // service in bwu-api
         nav('/profile') // take us back to home screen
     }
@@ -33,9 +35,9 @@ export default function Profile() {
         {bwu.map((bwu) => {
             return (
             <li>
-                <a href={`/${bwu.id}`}>{bwu.title}</a>
-                {/* <div>{bwu}</div> */}
-                <div onClick={deleteTheBwu}>Delete</div>
+                <a href={`/${bwu._id}`}>{bwu.title}</a>
+               
+                {/* <button onClick={deleteTheBwu}>Delete</button> */}
             </li>
             )
         })}
@@ -46,6 +48,9 @@ export default function Profile() {
     )
 
 }
+//doesnt delete 
+//when clicked doesnt show
+//doesnt update
 
 
 

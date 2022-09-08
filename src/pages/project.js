@@ -1,4 +1,4 @@
-import { getbwus, deletebwu } from '../services/bwu-api'
+import { getbwu, deletebwu, editbwu } from '../services/bwu-api'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -9,32 +9,38 @@ const Project = () => {
     const [bwu, setBwu] = useState({})
 
     useEffect(() => {
-        getbwus(id)
+        getbwu(id)
         .then(res => setBwu(res.data))
     }, [])
 
     const deleteTheBwu = () => {
         deletebwu(id) // service in todos-api
-        nav('/:id') // take us back to home screen
+        nav(`/profile`) // take us back to home screen
     }
+    // const editTheBwu = () => {
+    //     editbwu(id) // service in todos-api
+    //     nav(`/edit/${id}`) // take us back to home screen
+    // }
 
 
     return (
         <div>
             <div>
-                <h1>{bwu.title}</h1>
-                <p>{bwu.description}</p>
+                <h3>{bwu.title}This Is Supposed to Have Title</h3>
+                <p>{bwu.description}This Is Supposed to Have Example</p>
                 <ul>
-                    <a>{bwu.img1}</a>
+                    <a>{bwu.img1}Image one is here</a>
                     <button onClick={() => { deleteTheBwu(`/${bwu.img1}/`) }}>Delete</button>
-                    <a>{bwu.img2}</a>
+                    <a>{bwu.img2}Image two is here</a>
                     <button onClick={() => { deleteTheBwu(`/${bwu.img2}/`) }}>Delete</button>
-                    <a>{bwu.img3}</a>
+                    <a>{bwu.img3}Image three is here</a>
                     <button onClick={() => { deleteTheBwu(`/${bwu.img3}/`) }}>Delete</button>
 
                 </ul>
+                 
+                <button onClick={deleteTheBwu}>Delete Project</button>
             </div>
-            <button onClick={() => { nav(`/${id}/edit`) }}>Edit</button>
+            <button onClick={() => {nav(`/edit`)}}>This is supposed to redirect to edit</button>
         </div>
     )
 }
