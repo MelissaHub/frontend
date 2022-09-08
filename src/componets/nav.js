@@ -7,7 +7,7 @@ const Nav = () => {
         <div>
 
             <a href="/">Home Icon </a>
-            <a href="/Login">Login/out form </a>    
+            <a href="/profile">Login </a>    
         </div>
 
     );

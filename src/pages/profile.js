@@ -1,46 +1,51 @@
+import {getbwus,deletebwu} from '../services/bwu-api'
+import {useState, useEffect} from 'react'
+import {useParams, useNavigate} from 'react-router-dom'
 
-const Profile = () => {
 
 
 
-    const { person } = this.props
-    //destructre it {pokemon}
-    //this.props is whatever the stored value is
-    //made a fragment
+export default function Profile() {
+    const nav = useNavigate()
+    const { id } = useParams()
+    const [bwu, setBwu] = useState([])
+    useEffect(()=>{
+        getbwus()
+        .then(res => setBwu(res.data))
+    },[])
+    const deleteTheBwu = () =>{
+        deletebwu(id) // service in bwu-api
+        nav('/profile') // take us back to home screen
+    }
+    console.log(bwu)
     return (
 
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>{user.name}</title>
-                <link rel="stylesheet" href="/CSS/showstyle.css"></link>
-            </head>
-            <body>
-                <div className='body'>
+        <div>
+            <div>Profile Image</div>
+            <div>Fake about</div>
+            <a href='/create'>Create</a>
+            <div>
+                <div>Img1</div>
+                <div>Img2</div>
+                <div>Img3</div>
+            </div>
+        <ul>
+        {bwu.map((bwu) => {
+            return (
+            <li>
+                <a href={`/${bwu.id}`}>{bwu.title}</a>
+                {/* <div>{bwu}</div> */}
+                <div onClick={deleteTheBwu}>Delete</div>
+            </li>
+            )
+        })}
+        
+        </ul>
 
-                    <div>{user.img}</div>
-                    <p>{user.text}</p>
-                    <button href={`/project/${project.id}/edit`}>EDIT</button>
-                    <div>reference profiles</div>
-
-
-                    <div className=''>
-
-                        <button href={`/project/${project.id}`}>{`${project.name}`} DELETE</button>
-
-                    </div>
-
-                </div>
-
-
-            </body>
-        </html>
+    </div>
     )
 
 }
 
 
 
-export default Profile;

@@ -1,26 +1,28 @@
 // This file will be our endpoints
 import axios from 'axios'
-const baseURL = 'https://backexpress.herokuapp.com/bwu'
+const baseURL = 'http://localhost:3001/project'
 
+
+//get
 export const getbwus = () => {
     const URL = baseURL 
     const response = axios.get(URL)
     return response
 }
-
+//show
 export const getbwu = (id) => {
     const URL = `${baseURL}/${id}`
     const response = axios.get(URL)
     return response
 }
-
-export const deletbwu = (id) => {
+//delete
+export const deletebwu = (id) => {
     const URL = `${baseURL}/${id}`
     const response = axios.delete(URL)
     return response
 }
 //edit
-export const editbwu = (id, updatedTodo) => {
+export const editbwu = (id, updatedbwu) => {
     const URL = `${baseURL}/${id}`
     const response = axios.put(URL, updatedbwu)
     return response
