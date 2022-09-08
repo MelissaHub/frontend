@@ -1,6 +1,7 @@
 // This file will be our endpoints
 import axios from 'axios'
-const baseURL = 'http://localhost:3001/project'
+const baseURL = 'https://bwuback.herokuapp.com/project'
+// http://localhost:3001/project
 
 
 //get
