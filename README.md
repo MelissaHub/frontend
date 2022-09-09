@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+## Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+----------
+Backend routes for the App. Goal is to make a Pitch site for any and all pitches a user would want to keep organized.
 
-## Available Scripts
+----------
 
-In the project directory, you can run:
+## Getting started / Prerequistes
 
-### `npm start`
+## React Installations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- npx create-react-app (name)
+- npm i axios
+- npm i react-router-dom@6
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mongoose
+-----------
+- In your .env PORT = 3000
+- Add your MONG URI = (link)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Create these files and folders
 
-### `npm run eject`
+### Inside Src Folder
+- (folder) componets (apparently this is also where pages are supposed to be instead)
+   -- Footer.js
+   -- Nav.js
+- (folder) pages (Schema)
+    -- Create.js
+    -- Edit.js
+    -- Home.js
+    -- Profile.js
+    -- Project.js
+- (folder) services (Axios Routes)
+  -- bwu-api.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ## App.js starter
+  -----
+  - Import all your pages/ componets indiviually
+  - Import the Browser Routes / Router
+  - You can chose to play with your CSS and install Bootstrap
+  - Set up your routes and router ( I put nave and Footer on outside since will be on all pages)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  ## Pages / Componets / Notes
+  Once you add your skeletal callback functions in each ( npm start) to see if things are simply connected. This will automatically notify you of errors on screen.
+  From there you can use the code presented with to perform each task. Make sure the App Routes on your App.js coicide to where you want your links to go to, especially for the /:id. 
+  Keep and eye on how the functions from the Api are called as well as the Syntax for the folders.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ### Bootstrap
+    - npm i bootstrap (whats on site)
+    - import 'bootstrap/dist/css/bootstrap.min.css' (public index.js)
+    - <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"> (index.html in head)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+  ## bwu-api.js (axios)
+  -----
+  This just be the local host link at first and then heroku when comleted and push 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  - Seeding
+  - Index
+  - Delete
+  - Update
+  - Create
+  - Show
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## in folder run nodemon

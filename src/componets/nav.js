@@ -1,3 +1,4 @@
+import '../CSS/nav.css'
 
 const Nav = () => {
 
