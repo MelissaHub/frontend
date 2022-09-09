@@ -23,14 +23,14 @@ export default function Profile() {
     return (
 
         <div>
-            <div>Profile Image</div>
+            <div className ="text-center">Profile Image</div>
             <div>Fake about</div>
             <a href='/create'>Create</a>
-            <div>
+            {/* <div>
                 <div>Img1</div>
                 <div>Img2</div>
                 <div>Img3</div>
-            </div>
+            </div> */}
         <ul>
         {bwu.map((bwu) => {
             return (

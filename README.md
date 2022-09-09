@@ -6,6 +6,8 @@ Backend routes for the App. Goal is to make a Pitch site for any and all pitches
 ----------
 
 ## Getting started / Prerequistes
+### WireFrame
+- ![](public/wireframe.jpg)
 
 ## React Installations
 
@@ -71,4 +73,4 @@ Backend routes for the App. Goal is to make a Pitch site for any and all pitches
   - Show
 
 
-  ## in folder run nodemon
+  ### in folder run nodemon
